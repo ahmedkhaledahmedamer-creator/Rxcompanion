@@ -1,0 +1,201 @@
+/* RxCompanion Custom Styles */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient backgrounds */
+.gradient-blue-green {
+  background: linear-gradient(135deg, #3b82f6 0%, #22c55e 100%);
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Dark mode transitions */
+.dark-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Button hover lift */
+.btn-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Pulse animation for online status */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Chat message bubbles */
+.message-bubble {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  word-wrap: break-word;
+}
+
+.message-bubble-sent {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message-bubble-received {
+  background: #f1f5f9;
+  color: #1e293b;
+  border-bottom-left-radius: 4px;
+}
+
+.dark .message-bubble-received {
+  background: #334155;
+  color: #f1f5f9;
+}
+
+/* Input focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #3b82f6;
+}
+
+/* Sidebar transition */
+.sidebar-transition {
+  transition: width 0.3s ease;
+}
+
+/* Badge styles */
+.badge-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background: #1e293b;
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar-collapsed {
+    width: 0;
+    overflow: hidden;
+  }
+  
+  .message-bubble {
+    max-width: 85%;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
